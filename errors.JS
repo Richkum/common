@@ -51,3 +51,25 @@ class ValidationError extends Error {
  throw new ValidationError('Invalid email address');
 
 //  * ERROR PROPAGATION AND INTERCEPTION
+
+Node.js supports several mechanisms for propagating and handling errors that occur while an application is running. 
+How these errors are reported and handled depends entirely on the type of Error and the style of the API that is called.
+
+// AN EXAMPLE OF AN ERROR
+
+function divide(a, b) {
+   if (b === 0) {
+       throw new Error("Division by zero is not allowed.");
+   }
+   return a / b;
+}
+
+try {
+   console.log(divide(10, 0));
+} catch (error) {
+   console.error(error.message);
+}
+
+
+
+When you run the code on the terminal the error message is shown
